@@ -1,0 +1,52 @@
+<%- include ("../partials/header") %>
+<%- include ("../partials/main_nav") %>
+<main class="container">
+    
+      <div class="row">
+        <div class="col-md-offset-3 col-md-12"> <!--web page can contain max of 8 columns, if you want to change it, change col-md-8-->
+            <h1 class="ticket-title"><%= title %></h1>
+            <br>
+            <a href="/tickets/add" class="btn btn-primary" role="button">
+              <i class="fas fa-plus-circle"></i> Submit a Ticket </a>
+            <br>
+            <br>
+            
+      <table class="table table-bordered table-striped table-hover">
+      <tr> 
+        <th class="text-center col-2"> Name </th>
+        <th class="text-center col-2"> Request Details </th>
+        <th class="text-center col-2"> Date Requested </th>
+        <th class="text-center col-2"> Priority </th>
+        <th class="text-center col-2"> Status </th>
+        <th class="text-center col-1"> Edit </th>
+        <th class="text-center col-1"> Delete </th>
+      </tr>
+      <% for(let count=0; count<Ticketlist.length; count++) { %> 
+        <tr> 
+            <td class="text-center col-2"> <%= Ticketlist[count].name %> </td>
+            <td class="text-center col-2"> <%= Ticketlist[count].request %></td>
+            <td class="text-center col-2"> <%= Ticketlist[count].date %></td>
+            <td class="text-center col-2"> <%= Ticketlist[count].priority %></td>
+            <td class="text-center col-2"> <%= Ticketlist[count].status %></td>
+            <td class="text-center col-1">
+             <a href="/tickets/edit/<%= Ticketlist[count]._id %>"
+             class="btn btn-primary">
+             <i class="fas fa-pencil-alt"></i> Edit </a> </td>
+            <td class="text-center col-1">
+             <a href="/tickets/delete/<%= Ticketlist[count]._id %>"
+             class="btn btn-danger">
+             <i class="fas fa-trash-alt"></i> Delete </a> </td>
+        </tr> 
+      <% } %>
+      </table>
+      
+      </div>
+      </div>
+    
+ 
+</main>
+
+
+
+<%- include ("../partials/bottom_nav") %>
+<%- include ("../partials/footer") %>
