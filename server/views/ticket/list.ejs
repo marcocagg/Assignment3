@@ -1,37 +1,37 @@
 <%- include ("../partials/header") %>
 <%- include ("../partials/main_nav") %>
 <main class="container">
-    
+    <div class="listdisplay">
       <div class="row">
-        <div class="col-md-offset-3 col-md-12"> <!--web page can contain max of 8 columns, if you want to change it, change col-md-8-->
-            <h1 class="ticket-title"><%= title %></h1>
+        <div class="col-md-offset-3 col-md-16"> <!--web page can contain max of 8 columns, if you want to change it, change col-md-8-->
+            <h1 class="ticketTitle" style="text-align: center"><%= title %></h1>
             <br>
             <a href="/tickets/add" class="btn btn-primary" role="button">
-              <i class="fas fa-plus-circle"></i> Submit a Ticket </a>
+              <i class="fa-solid fa-envelope"></i> Submit a Ticket </a>
             <br>
             <br>
             
       <table class="table table-bordered table-striped table-hover">
       <tr> 
         <th class="text-center col-2"> Name </th>
-        <th class="text-center col-2"> Request Details </th>
-        <th class="text-center col-2"> Date Requested </th>
-        <th class="text-center col-2"> Priority </th>
+        <th class="text-center col-7"> Request Details </th>
+        <th class="text-center col-1"> Date Requested </th>
+        <th class="text-center col-1"> Priority </th>
         <th class="text-center col-2"> Status </th>
-        <th class="text-center col-1"> Edit </th>
+        <th class="text-center col-2"> Edit </th>
         <th class="text-center col-1"> Delete </th>
       </tr>
       <% for(let count=0; count<Ticketlist.length; count++) { %> 
         <tr> 
             <td class="text-center col-2"> <%= Ticketlist[count].name %> </td>
-            <td class="text-center col-2"> <%= Ticketlist[count].request %></td>
-            <td class="text-center col-2"> <%= Ticketlist[count].date %></td>
-            <td class="text-center col-2"> <%= Ticketlist[count].priority %></td>
+            <td class="text-center col-7"> <%= Ticketlist[count].request %></td>
+            <td class="text-center col-1"> <%= Ticketlist[count].date %></td>
+            <td class="text-center col-1"> <%= Ticketlist[count].priority %></td>
             <td class="text-center col-2"> <%= Ticketlist[count].status %></td>
-            <td class="text-center col-1">
+            <td class="text-center col-2">
              <a href="/tickets/edit/<%= Ticketlist[count]._id %>"
              class="btn btn-primary">
-             <i class="fas fa-pencil-alt"></i> Edit </a> </td>
+             <i class="fa-solid fa-gear"></i> Edit </a> </td>
             <td class="text-center col-1">
              <a href="/tickets/delete/<%= Ticketlist[count]._id %>"
              class="btn btn-danger">
@@ -42,8 +42,7 @@
       
       </div>
       </div>
-    
- 
+      </div>
 </main>
 
 
