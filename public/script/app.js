@@ -4,6 +4,7 @@
         console.log("App Started")
 
         let deleteButtons = document.querySelectorAll('.btn-danger')
+    //When deleting an object form the database a popup will ask the user to confirm deletion
     for(button of deleteButtons)
     {
         button.addEventListener('click',(event)=>{

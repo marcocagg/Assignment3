@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-//create a ticket model
+//creates a ticket model, this is the schema that all objects in the database must use
 let ticketModel = mongoose.Schema({
     name : String,
     request : String,
@@ -8,6 +8,7 @@ let ticketModel = mongoose.Schema({
     status : String,
     },
     {
+        //every item will be in the tickets collection
         collections : "tickets"
     }
 )

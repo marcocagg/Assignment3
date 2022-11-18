@@ -7,8 +7,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
+        <!--Button for the home page on the navigation bar-->
         <li class="nav-item">
+        <!--If user is on the Home page the Home button will be highlighted-->
         <% if (title == "Home" )  { %>
           <a class="nav-link active" aria-current="page" href="home">
         <% } else { %>
@@ -18,16 +19,15 @@
         </li>
 
         <li class="nav-item">
+        // Button for the tickets page on the navigation bar
+        // If user is on the Home page the Home button will be highlighted
         <% if (title ==  "Current Tickets"  ) { %>
           <a class="nav-link active" aria-current="page" href="tickets"> 
         <% } else { %>
           <a class="nav-link" aria-current="page" href="/tickets"> 
         <% } %>
           <i class="fa-solid fa-clipboard-list"></i> Tickets </a>
-        </li>
-
-       
-        
+        </li>   
     </div>
   </div>
 </nav>

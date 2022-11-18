@@ -3,16 +3,19 @@
 <main class="container">
     <div class="listdisplay">
       <div class="row">
-        <div class="col-md-offset-3 col-md-16"> <!--web page can contain max of 8 columns, if you want to change it, change col-md-8-->
+        <!--col-md-16 describes how long the toal table will be, all columns must add up to 16 to display properly-->
+        <div class="col-md-offset-3 col-md-16"> 
             <h1 class="ticketTitle" style="text-align: center"><%= title %></h1>
             <br>
+            <!--Button for adding a new object to the database-->
             <a href="/tickets/add" class="btn btn-primary" role="button">
               <i class="fa-solid fa-envelope"></i> Submit a Ticket </a>
             <br>
             <br>
-            
+      <!--Displays table for all of the objects in the database-->      
       <table class="table table-bordered table-striped table-hover">
       <tr> 
+        <!--Displays the headers of the table -->
         <th class="text-center col-2"> Name </th>
         <th class="text-center col-7"> Request Details </th>
         <th class="text-center col-1"> Date Requested </th>
@@ -21,6 +24,8 @@
         <th class="text-center col-2"> Edit </th>
         <th class="text-center col-1"> Delete </th>
       </tr>
+      <!--Goes through the database and adds the objects in it and displays it to the table-->
+      <!--Also displays edit and delete buttons for each object in the database-->
       <% for(let count=0; count<Ticketlist.length; count++) { %> 
         <tr> 
             <td class="text-center col-2"> <%= Ticketlist[count].name %> </td>
@@ -39,13 +44,9 @@
         </tr> 
       <% } %>
       </table>
-      
       </div>
       </div>
       </div>
 </main>
-
-
-
 <%- include ("../partials/bottom_nav") %>
 <%- include ("../partials/footer") %>

@@ -13,14 +13,13 @@ mongoose.connect(DB.URI);
 let mongDB = mongoose.connection;
 mongDB.on('error',console.error.bind(console,'Connection error:'));
 mongDB.once('open',() => {
+  //Sends to the console that the website has successfully connected to the database
   console.log('Connected to MongoDB');
 });
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let ticketsRouter = require('../routes/ticket')
-
-
 
 let app = express();
 

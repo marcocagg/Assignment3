@@ -5,9 +5,11 @@
 <div class="container">
     <div class="row"> 
         <div class="col-md-offset-3 col-md-6">
+            <!--Form for adding a new object to the database-->
             <h1 class="ticketTitle"> <%= title %></h1> <br><br>
             <form class="form" method="POST">
                 <div class="form-group">
+                    <!--Text field for name-->
                     <label for="nameTextField"> Name </label>
                     <input type="text" class=form-control 
                     id="nameTextField"
@@ -16,6 +18,7 @@
                 </div>
 
                  <div class="form-group">
+                    <!--text field for request details, set as a textarea-->
                     <label for="requestTextField"> Request Details </label>
                     <textarea type="text" class=form-control 
                     id="requestTextField"
@@ -24,6 +27,8 @@
                 </div>
 
                  <div class="form-group">
+                    <!--field for entering date-->
+                    <!--when clicked on it will change the field from a text to a date entry-->
                     <label for="dateTextField"> Date Requested </label>
                     <input type="text" class=form-control 
                     id="dateTextField"
@@ -33,6 +38,7 @@
                 </div>
 
                  <div class="form-group">
+                    <!--text field for entering a priority level-->
                     <label for="priorityTextField"> Priority </label>
                     <input type="text" class=form-control 
                     id="priorityTextField"
@@ -41,6 +47,7 @@
                 </div>
 
                 <div class="form-group">
+                    <!--text field for entering a status-->
                     <label for="statusTextField"> Status </label>
                     <input type="text" class=form-control 
                     id="statusTextField"
@@ -48,14 +55,14 @@
                     name="status" required>
                 </div>
                 <br>
+                <!--Submit button will add object to the database-->
                 <button class="btn btn-primary" type="submit"> 
                     <i class="fas fa-edit"> </i> Submit 
                 </button>
-
+                <!--Cancel button will send the user back to the ticket page-->
                 <a href="/tickets" class="btn btn-warning">
                     <i class="fas fa-undo"></i> Cancel </a>
             </form>
-
         </div>
     </div> 
 </div> 
